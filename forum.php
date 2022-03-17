@@ -57,9 +57,7 @@ if ($table->num_rows!==0)
 if (isset($_POST["comment"]))
 {
     $comm=$_POST["comment"];
-    var_dump($comm);
-    var_dump($userid);
-    $conn->query("insert into comments (userid, comment) values ($userid,'$comm')");
+    $conn->query("insert into comments (userid, comment) values ($actualuserid,'$comm')");
     header('Location: forum.php');
 }
 if (isset($_GET["delete"]))
